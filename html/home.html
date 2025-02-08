@@ -7,15 +7,32 @@
     <title>Site Persiana</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '640708928540808'); // Substitua '640708928540808' pelo ID do seu pixel
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=640708928540808&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
 </head>
 
 <body>
     <div class="top-bar">
         <div class="container">
             <div class="social-icons">
-                <a href="https://wa.me/5582988858584"><i class="fab fa-whatsapp"
+                <a id="whatsapp-top" href="https://wa.me/5582988858584"><i class="fab fa-whatsapp"
                         style="color: var(--cor-verde-whatsapp);"></i></a>
-                <a href="https://www.instagram.com/yeshuapersianas/"><i class="fab fa-instagram"></i></a>
+                <a id="instagram-top" href="https://www.instagram.com/yeshuapersianas/"><i class="fab fa-instagram"></i></a>
             </div>
             <div class="numero">
                 <img src="../assets/svg/whatsapp.svg" alt="whatsapp" height="20px">
@@ -31,10 +48,10 @@
             </div>
             <nav class="nav-menu">
                 <ul>
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#cortina">Cortinas</a></li>
-                    <li><a href="#persiana">Persiana</a></li>
-                    <li><a href="#contato">Contato</a></li>
+                    <li><a id="inicio" href="#">Início</a></li>
+                    <li><a id="cortina" href="#cortina">Cortinas</a></li>
+                    <li><a id="persiana" href="#persiana">Persiana</a></li>
+                    <li><a id="contato-link" href="#contato">Contato</a></li>
                 </ul>
             </nav>
         </div>
@@ -71,8 +88,8 @@
                     </div>
                 </div>
                 <div class="button">
-                    <button class="prev"></button>
-                    <button class="next"></button>
+                    <button id="prev-slide" class="prev"></button>
+                    <button id="next-slide" class="next"></button>
                 </div>
             </div>
         </section>
@@ -125,7 +142,7 @@
                         </div>
                     </div>
                     <div class="whatsapp-button">
-                        <a href="https://wa.me/5582988858584?text=Oi%2C+gostaria+de+mais+informa%C3%A7%C3%B5es"
+                        <a id="whatsapp-cortina" href="https://wa.me/5582988858584?text=Oi%2C+gostaria+de+mais+informa%C3%A7%C3%B5es"
                             target="_blank" class="btn-whatsapp">
                             <i class="fab fa-whatsapp"></i> Fale Conosco
                         </a>
@@ -183,7 +200,7 @@
                         </div>
                     </div>
                     <div class="whatsapp-button">
-                        <a href="https://wa.me/5582988858584?text=Oi%2C+gostaria+de+mais+informa%C3%A7%C3%B5es"
+                        <a id="whatsapp-persiana" href="https://wa.me/5582988858584?text=Oi%2C+gostaria+de+mais+informa%C3%A7%C3%B5es"
                             target="_blank" class="btn-whatsapp">
                             <i class="fab fa-whatsapp"></i> Fale Conosco
                         </a>
@@ -216,7 +233,7 @@
                     </div>
                 </div>
                 <div class="whatsapp-button">
-                    <a href="https://wa.me/5582988858584?text=Oi%2C+gostaria+de+mais+informa%C3%A7%C3%B5es"
+                    <a id="whatsapp-chama" href="https://wa.me/5582988858584?text=Oi%2C+gostaria+de+mais+informa%C3%A7%C3%B5es"
                         target="_blank" class="btn-whatsapp">
                         <i class="fab fa-whatsapp"></i> Fale Conosco
                     </a>
@@ -261,7 +278,7 @@
                     </div>
                 </div>
                 <div class="whatsapp-button">
-                    <a href="https://wa.me/5582988858584?text=Oi%2C+gostaria+de+mais+informa%C3%A7%C3%B5es"
+                    <a id="whatsapp-atencao" href="https://wa.me/5582988858584?text=Oi%2C+gostaria+de+mais+informa%C3%A7%C3%B5es"
                         target="_blank" class="btn-whatsapp">
                         <i class="fab fa-whatsapp"></i> Fale Conosco
                     </a>
@@ -274,15 +291,15 @@
                 <p style="color: #333;">Escolha uma das opções abaixo para falar conosco diretamente pelo WhatsApp:</p>
             </div>
             <div class="contact-buttons">
-                <a href="https://wa.me/5582988858584?text=Olá%2C+gostaria+de+solicitar+um+orçamento+para+cortinas."
+                <a id="solicitar-orcamento" href="https://wa.me/5582988858584?text=Olá%2C+gostaria+de+solicitar+um+orçamento+para+cortinas."
                     class="btn" target="_blank">
                     <i class="fas fa-file-invoice"></i> Solicitar Orçamento
                 </a>
-                <a href="https://wa.me/5582988858584?text=Olá%2C+gostaria+de+agendar+uma+visita+técnica+para+minha+residência."
+                <a id="agendar-visita" href="https://wa.me/5582988858584?text=Olá%2C+gostaria+de+agendar+uma+visita+técnica+para+minha+residência."
                     class="btn" target="_blank">
                     <i class="fas fa-calendar-alt"></i> Agendar Visita Técnica
                 </a>
-                <a href="https://wa.me/5582988858584?text=Olá%2C+gostaria+de+ver+os+modelos+disponíveis+de+cortinas."
+                <a id="consultar-modelos" href="https://wa.me/5582988858584?text=Olá%2C+gostaria+de+ver+os+modelos+disponíveis+de+cortinas."
                     class="btn" target="_blank">
                     <i class="fas fa-search"></i> Consultar Modelos
                 </a>
@@ -319,9 +336,9 @@
             <div class="footer-section social">
                 <h2>Siga-nos</h2>
                 <div class="social-icons">
-                    <a href="https://wa.me/5582988858584" target="_blank" rel="noopener noreferrer"><i
+                    <a id="whatsapp-footer" href="https://wa.me/5582988858584" target="_blank" rel="noopener noreferrer"><i
                             class="fab fa-whatsapp"></i></a>
-                    <a href="https://www.instagram.com/yeshuapersianas/" target="_blank" rel="noopener noreferrer"><i
+                    <a id="instagram-footer" href="https://www.instagram.com/yeshuapersianas/" target="_blank" rel="noopener noreferrer"><i
                             class="fab fa-instagram"></i></a>
                 </div>
             </div>
@@ -331,8 +348,25 @@
         </div>
     </footer>
     <!-- Botão fixo para voltar ao início -->
-    <a href="#top" class="btn-home"><i class="fas fa-home"></i></a>
+    <a id="btn-home" href="#top" class="btn-home"><i class="fas fa-home"></i></a>
+
+    <!-- Mensagem de Cookies -->
+    <div class="cookie-banner" id="cookie-banner">
+        <p>Este site utiliza cookies para garantir que você obtenha a melhor experiência em nosso site. <a href="#">Saiba mais</a></p>
+        <button id="accept-cookies">Aceitar</button>
+    </div>
+
     <script src="../js/script.js"></script>
+    <script>
+        document.getElementById('accept-cookies').addEventListener('click', function() {
+            document.getElementById('cookie-banner').style.display = 'none';
+            localStorage.setItem('cookiesAccepted', 'true');
+        });
+
+        if (localStorage.getItem('cookiesAccepted') === 'true') {
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+    </script>
 </body>
 
 </html>

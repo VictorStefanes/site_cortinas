@@ -53,6 +53,32 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.style.display = 'none';
     }
   });
+
+  function trackButtonClick(event) {
+    // Substitua 'trackEvent' pela função de rastreamento do seu pixel
+    fbq('track', 'ButtonClick', {
+      buttonId: event.target.id,
+      buttonText: event.target.innerText,
+      token: 'EAAIymfUhgqABOzC4khOHSTQdvyZBRIbuNSIL5tKW04DPLCe0MYkN3ZAVFQjXZAQnpOhcBlDuN3wThPTZBJdWoLje5IVaJJmqLvGjTBoxk21G1CzJwoJbBdIYOZAGo3HEs73uqneEh7XPSJGPG71fEuA71pZCc78IZCWRES3ti8ZCrSHPAZBV2HZCpmNzPvZBZBTnuEvaIAZDZD'
+    });
+  }
+
+  document.querySelectorAll('a, button').forEach(element => {
+    element.addEventListener('click', trackButtonClick);
+  });
+
+  // Gerenciar a mensagem de cookies
+  const cookieBanner = document.getElementById('cookie-banner');
+  const acceptCookiesButton = document.getElementById('accept-cookies');
+
+  acceptCookiesButton.addEventListener('click', () => {
+    cookieBanner.style.display = 'none';
+    localStorage.setItem('cookiesAccepted', 'true');
+  });
+
+  if (localStorage.getItem('cookiesAccepted') === 'true') {
+    cookieBanner.style.display = 'none';
+  }
 });
 
 
