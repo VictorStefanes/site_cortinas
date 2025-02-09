@@ -26,7 +26,7 @@
     <!-- End Facebook Pixel Code -->
 </head>
 
-<body>
+<body id="top">
     <div class="top-bar">
         <div class="container">
             <div class="social-icons">
@@ -48,9 +48,10 @@
             </div>
             <nav class="nav-menu">
                 <ul>
-                    <li><a id="inicio" href="#">Início</a></li>
-                    <li><a id="cortina" href="#cortina">Cortinas</a></li>
-                    <li><a id="persiana" href="#persiana">Persiana</a></li>
+                    <li><a id="inicio" href="#top">Início</a></li>
+                    <li><a id="cortina-link" href="#cortina">Cortinas</a></li>
+                    <li><a id="persiana-link" href="#persiana">Persiana</a></li>
+                    <li><a id="medidas-link" href="#medidas">Medidas</a></li>
                     <li><a id="contato-link" href="#contato">Contato</a></li>
                 </ul>
             </nav>
@@ -259,7 +260,7 @@
                 </p>
                 <div class="hover-images">
                     <div class="image-hover-container">
-                        <img src="../assets/images/automação-cortina.webp" alt="Imagem 1" class="hover-image">
+                        <img src="../assets/images/motorizada.jpg" alt="Imagem 1" class="hover-image">
                         <div class="hover-info" style="background-color: #f0f0f087;">
                             <div class="info-content">
                                 <h3>Automação</h3>
@@ -268,7 +269,7 @@
                         </div>
                     </div>
                     <div class="image-hover-container">
-                        <img src="../assets/images/automação-persiana.jpg" alt="Imagem 2" class="hover-image">
+                        <img src="../assets/images/motorizada2.jpg" alt="Imagem 2" class="hover-image">
                         <div class="hover-info" style="background-color: #f0f0f087;">
                             <div class="info-content">
                                 <h3>Motorizada</h3>
@@ -283,6 +284,33 @@
                         <i class="fab fa-whatsapp"></i> Fale Conosco
                     </a>
                 </div>
+            </div>
+        </section>
+        <section id="medidas">
+            <div class="container">
+                <div class="title">
+                    <h2>Calcule suas Medidas</h2>
+                    <p>Selecione o tipo de produto, insira as medidas de altura e largura em metros, e envie diretamente para o nosso WhatsApp.</p>
+                </div>
+                <form id="medidas-form">
+                    <div class="form-group">
+                        <label for="produto">Produto:</label>
+                        <select id="produto" name="produto">
+                            <option value="cortina">Cortina</option>
+                            <option value="persiana">Persiana</option>
+                            <option value="ambos">Ambos</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="altura">Altura (m):</label>
+                        <input type="number" id="altura" name="altura" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="largura">Largura (m):</label>
+                        <input type="number" id="largura" name="largura" step="0.01" required>
+                    </div>
+                    <button type="submit" class="btn-whatsapp">Enviar para WhatsApp</button>
+                </form>
             </div>
         </section>
         <section id="contato">

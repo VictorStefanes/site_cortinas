@@ -24,6 +24,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Adicionar evento de clique para o link "Cortina"
+  const cortinaLink = document.querySelector('.nav-menu a[href="#cortina"]');
+  if (cortinaLink) {
+    cortinaLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelector('#cortina').scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+
+  // Adicionar evento de clique para o link "Persiana"
+  const persianaLink = document.querySelector('.nav-menu a[href="#persiana"]');
+  if (persianaLink) {
+    persianaLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelector('#persiana').scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+
+  // Adicionar evento de clique para o link "Medidas"
+  const medidasLink = document.querySelector('.nav-menu a[href="#medidas"]');
+  if (medidasLink) {
+    medidasLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelector('#medidas').scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+
   // Adicionar evento de clique para abrir a imagem em um modal
   const images = document.querySelectorAll('.image-container img');
   const modal = document.createElement('div');
@@ -67,6 +94,18 @@ document.addEventListener("DOMContentLoaded", () => {
     element.addEventListener('click', trackButtonClick);
   });
 
+  // Enviar informações de medidas para o WhatsApp
+  const medidasForm = document.getElementById('medidas-form');
+  medidasForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const produto = document.getElementById('produto').value;
+    const altura = document.getElementById('altura').value;
+    const largura = document.getElementById('largura').value;
+    const mensagem = `Olá, gostaria de solicitar um orçamento para:\n\nProduto: ${produto}\nAltura: ${altura} m\nLargura: ${largura} m`;
+    const whatsappUrl = `https://wa.me/5582988858584?text=${encodeURIComponent(mensagem)}`;
+    window.open(whatsappUrl, '_blank');
+  });
+
   // Gerenciar a mensagem de cookies
   const cookieBanner = document.getElementById('cookie-banner');
   const acceptCookiesButton = document.getElementById('accept-cookies');
@@ -78,6 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (localStorage.getItem('cookiesAccepted') === 'true') {
     cookieBanner.style.display = 'none';
+  } else {
+    cookieBanner.style.display = 'flex'; // Certifique-se de que a mensagem de cookies está sendo exibida
   }
 });
 

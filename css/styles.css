@@ -776,6 +776,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    visibility: visible; /* Certifique-se de que a visibilidade está definida como visível */
 }
 
 .cookie-banner p {
@@ -800,5 +801,64 @@ footer {
 }
 
 .cookie-banner button:hover {
+    background-color: var(--cor-verde-escuro-whatsapp);
+}
+
+/* Medidas */
+#medidas {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: var(--cor-branco);
+}
+
+#medidas .title h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#medidas .title p {
+    margin-bottom: 20px;
+    font-size: 1em;
+    color: #666;
+}
+
+#medidas-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#medidas-form .form-group {
+    margin-bottom: 20px;
+}
+
+#medidas-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#medidas-form select,
+#medidas-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#medidas-form button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--cor-verde-whatsapp);
+    color: var(--cor-branco);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#medidas-form button:hover {
     background-color: var(--cor-verde-escuro-whatsapp);
 }
