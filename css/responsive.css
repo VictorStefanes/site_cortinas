@@ -1,0 +1,218 @@
+/* Estilos para dispositivos móveis */
+@media (max-width: 767px) {
+    .container {
+        padding: 0 10px;
+        text-align: center;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .container-banner {
+        display: none;
+    }
+
+    .header-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .image-row {
+        grid-template-columns: 1fr;
+    }
+
+    .hover-images {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contact-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .produto .image-row,
+    .chama .content-image,
+    .atencao .hover-images,
+    .contact-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .atencao .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .atencao .texto,
+    .atencao .hover-images {
+        width: 100%;
+        text-align: center;
+    }
+
+    .atencao .hover-images {
+        flex-direction: column;
+    }
+
+    .image-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        height: auto;
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s ease;
+    }
+
+    .image-container:hover {
+        transform: scale(1.05);
+    }
+
+    .image-container .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .image-container:hover .overlay {
+        opacity: 1;
+    }
+
+    .overlay p {
+        color: var(--cor-branco);
+        font-size: 1.5em;
+        text-transform: uppercase;
+        backdrop-filter: blur(5px);
+    }
+
+    .chama .content-image {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .chama .content-full,
+    .chama .image {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Estilos para tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        padding: 0 15px;
+        text-align: center;
+    }
+
+    .nav-menu ul {
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .container-banner {
+        display: none;
+    }
+
+    .header-container {
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .image-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hover-images {
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .contact-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .produto .image-row,
+    .chama .content-image,
+    .atencao .hover-images,
+    .contact-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .atencao .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .atencao .texto,
+    .atencao .hover-images {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Estilos para desktops */
+@media (min-width: 1025px) {
+    .container {
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    .nav-menu ul {
+        flex-direction: row;
+        gap: 60px;
+    }
+
+    .container-banner {
+        display: block;
+    }
+
+    .header-container {
+        flex-direction: row;
+        gap: 50px;
+    }
+
+    .image-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hover-images {
+        flex-direction: row;
+        gap: 200px;
+    }
+
+    .contact-buttons {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .produto .image-row,
+    .chama .content-image,
+    .atencao .hover-images,
+    .contact-buttons {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .atencao .container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .atencao .texto,
+    .atencao .hover-images {
+        width: 100%;
+        text-align: center;
+    }
+}

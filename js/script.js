@@ -99,9 +99,8 @@ document.addEventListener("DOMContentLoaded", () => {
   medidasForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const produto = document.getElementById('produto').value;
-    const altura = document.getElementById('altura').value;
-    const largura = document.getElementById('largura').value;
-    const mensagem = `Olá, gostaria de solicitar um orçamento para:\n\nProduto: ${produto}\nAltura: ${altura} m\nLargura: ${largura} m`;
+    const medidas = document.getElementById('medidas').value;
+    const mensagem = `Olá, gostaria de solicitar um orçamento para:\n\nProduto: ${produto}\nMedidas: ${medidas} m²`;
     const whatsappUrl = `https://wa.me/5582988858584?text=${encodeURIComponent(mensagem)}`;
     window.open(whatsappUrl, '_blank');
   });
@@ -120,6 +119,13 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     cookieBanner.style.display = 'flex'; // Certifique-se de que a mensagem de cookies está sendo exibida
   }
+
+  const hamburgerMenu = document.querySelector('.hamburger-menu');
+  const navMenu = document.querySelector('.nav-menu');
+
+  hamburgerMenu.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
 });
 
 

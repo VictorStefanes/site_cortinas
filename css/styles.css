@@ -1,3 +1,4 @@
+@import url('responsive.css');
 :root {
     --cor-branco: #F6F6F6;
     --cor-marrom-escuro: #212121;
@@ -822,7 +823,22 @@ footer {
     color: #666;
 }
 
+#medidas .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#medidas .title {
+    flex: 1;
+    min-width: 300px;
+    margin-right: 20px;
+}
+
 #medidas-form {
+    flex: 1;
+    min-width: 300px;
     max-width: 600px;
     margin: 0 auto;
     text-align: left;
@@ -861,4 +877,73 @@ footer {
 
 #medidas-form button:hover {
     background-color: var(--cor-verde-escuro-whatsapp);
+}
+
+#medidas-form input,
+#medidas-form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid var(--cor-cinza-escuro);
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--cor-branco);
+}
+
+#medidas-form input:focus,
+#medidas-form select:focus {
+    border-color: var(--cor-verde);
+    box-shadow: 0 0 5px rgba(109, 152, 134, 0.5);
+    outline: none;
+}
+
+#medidas-form input::placeholder,
+#medidas-form select::placeholder {
+    color: var(--cor-cinza-escuro);
+    opacity: 0.7;
+}
+
+#medidas-form input:hover,
+#medidas-form select:hover {
+    border-color: var(--cor-verde);
+}
+
+#medidas-form input {
+    background-image: linear-gradient(to right, var(--cor-verde), var(--cor-verde));
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    background-position: bottom;
+    transition: background-size 0.3s ease;
+}
+
+#medidas-form input:focus {
+    background-size: 100% 2px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    background-color: var(--cor-branco);
+    padding: 0 5px;
+    transition: top 0.3s ease, transform 0.3s ease, font-size 0.3s ease;
+    pointer-events: none;
+    color: var(--cor-cinza-escuro);
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group select:focus + label,
+.form-group select:not(:placeholder-shown) + label {
+    top: -10px;
+    transform: translateY(0);
+    font-size: 0.8em;
+    color: var(--cor-verde);
 }
