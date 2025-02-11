@@ -82,9 +82,36 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function trackButtonClick(event) {
-    // Substitua 'trackEvent' pela função de rastreamento do seu pixel
-    fbq('track', 'ButtonClick', {
-      buttonId: event.target.id,
+    const buttonId = event.target.id;
+    let eventType = 'ButtonClick';
+
+    switch (buttonId) {
+      case 'whatsapp-top':
+      case 'whatsapp-footer':
+      case 'whatsapp-cortina':
+      case 'whatsapp-persiana':
+      case 'whatsapp-chama':
+      case 'whatsapp-atencao':
+        eventType = 'WhatsAppClick';
+        break;
+      case 'inicio':
+      case 'cortina-link':
+      case 'persiana-link':
+      case 'medidas-link':
+      case 'contato-link':
+        eventType = 'NavLinkClick';
+        break;
+      case 'solicitar-orcamento':
+      case 'agendar-visita':
+      case 'consultar-modelos':
+        eventType = 'ContactButtonClick';
+        break;
+      default:
+        eventType = 'ButtonClick';
+    }
+
+    fbq('track', eventType, {
+      buttonId: buttonId,
       buttonText: event.target.innerText,
       token: 'EAAIymfUhgqABOzC4khOHSTQdvyZBRIbuNSIL5tKW04DPLCe0MYkN3ZAVFQjXZAQnpOhcBlDuN3wThPTZBJdWoLje5IVaJJmqLvGjTBoxk21G1CzJwoJbBdIYOZAGo3HEs73uqneEh7XPSJGPG71fEuA71pZCc78IZCWRES3ti8ZCrSHPAZBV2HZCpmNzPvZBZBTnuEvaIAZDZD'
     });
